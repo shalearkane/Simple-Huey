@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "huey.contrib.djhuey",
-    # "ss.apps.SsConfig",
+    "jobs.apps.JobsConfig",
 ]
 
 MIDDLEWARE = [
