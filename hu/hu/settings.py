@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = "django-insecure-7(g(4m-j_)@5+l!5t-9c%p0%b$(4m)66hj37=cg$x&2d@^(nqu"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = []
 
@@ -132,3 +132,17 @@ STATIC_ROOT = os.path.join(BASE_DIR, "static")
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+HUEY = {
+    "name": "hu",
+    "url": "redis://localhost:6379/?db=1",
+    # To run Huey in "immediate" mode with a live storage API, specify
+    # immediate_use_memory=False.
+    "immediate_use_memory": False,
+    # OR:
+    # To run Huey in "live" mode regardless of whether DEBUG is enabled,
+    # specify immediate=False.
+    "immediate": False,
+}
+
+ALLOWED_HOSTS = ["127.0.0.1", "localhost"]
